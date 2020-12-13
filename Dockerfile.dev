@@ -1,0 +1,10 @@
+FROM node:current-buster
+
+WORKDIR /src/
+
+COPY package*.json ./
+RUN yarn install && yarn cache clean
+
+EXPOSE 3000
+
+CMD yarn run dev
